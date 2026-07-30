@@ -6,122 +6,342 @@
 <title>For Lalla Hiba ❤️</title>
 
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
-background:linear-gradient(135deg,#ff9ec4,#ffd6e7);
-font-family:Arial,sans-serif;
+background:linear-gradient(-45deg,#ff4b91,#ff6ec7,#ffb6d9,#ffd6ea);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
 overflow:hidden;
 }
 
+@keyframes bg{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
 .card{
-background:white;
-padding:40px;
-border-radius:20px;
+
+width:360px;
+padding:35px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+border-radius:25px;
 text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-width:320px;
-position:relative;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
 }
 
 h1{
-color:#ff2f74;
-font-size:32px;
+
+color:white;
+font-size:38px;
+margin-bottom:15px;
+
 }
 
 p{
+
+color:white;
 font-size:22px;
-margin-bottom:30px;
+margin-bottom:35px;
+
 }
 
 button{
+
 padding:15px 35px;
 font-size:20px;
 border:none;
 border-radius:40px;
 cursor:pointer;
-transition:.2s;
+transition:.3s;
+
 }
 
 #yes{
-background:#ff2f74;
+
+background:#00d26a;
 color:white;
 margin-right:15px;
+
+}
+
+#yes:hover{
+
+transform:scale(1.08);
+
 }
 
 #no{
-background:#ddd;
+
+background:#ff3f67;
+color:white;
 position:absolute;
+
 }
 
-#result{
+#popup{
+
 display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:25px;
+border-radius:20px;
+width:340px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+#popup h2{
+
+color:#ff3366;
+margin-bottom:20px;
+
+}
+
+.popupBtn{
+
+background:#ff3366;
+color:white;
+margin-top:15px;
+
+}
+
+#finish{
+
+display:none;
+position:fixed;
+inset:0;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#ff4f95;
+color:white;
+text-align:center;
+
+}
+
+#finish h1{
+
+font-size:50px;
+
+}
+
+#finish p{
+
+font-size:30px;
+
+}
+
+.heart{
+
+position:absolute;
+color:white;
+font-size:25px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
+</style><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Lalla Hiba ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff4b91,#ff6ec7,#ffb6d9,#ffd6ea);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
+overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+.card{
+
+width:360px;
+padding:35px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+border-radius:25px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+h1{
+
+color:white;
 font-size:38px;
-color:#ff2f74;
-font-weight:bold;
-animation:pop .6s;
+margin-bottom:15px;
+
 }
 
-@keyframes pop{
-0%{transform:scale(.2);}
-100%{transform:scale(1);}
+p{
+
+color:white;
+font-size:22px;
+margin-bottom:35px;
+
 }
+
+button{
+
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+#yes{
+
+background:#00d26a;
+color:white;
+margin-right:15px;
+
+}
+
+#yes:hover{
+
+transform:scale(1.08);
+
+}
+
+#no{
+
+background:#ff3f67;
+color:white;
+position:absolute;
+
+}
+
+#popup{
+
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:25px;
+border-radius:20px;
+width:340px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+#popup h2{
+
+color:#ff3366;
+margin-bottom:20px;
+
+}
+
+.popupBtn{
+
+background:#ff3366;
+color:white;
+margin-top:15px;
+
+}
+
+#finish{
+
+display:none;
+position:fixed;
+inset:0;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#ff4f95;
+color:white;
+text-align:center;
+
+}
+
+#finish h1{
+
+font-size:50px;
+
+}
+
+#finish p{
+
+font-size:30px;
+
+}
+
+.heart{
+
+position:absolute;
+color:white;
+font-size:25px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
 </style>
-
-</head>
-<body>
-
-<div class="card" id="question">
-
-<h1>❤️</h1>
-
-<p><b>Lalla hiba do u love me 🥹</b></p>
-
-<button id="yes">YES ❤️</button>
-<button id="no">NO</button>
-
-</div>
-
-<div id="result">
-
-<h1>🥹❤️</h1>
-
-<h2>Sff ana frhan ❤️</h2>
-
-</div>
-
-<script>
-
-const no=document.getElementById("no");
-
-no.addEventListener("mouseover",move);
-
-no.addEventListener("touchstart",move);
-
-function move(){
-
-let x=Math.random()*(window.innerWidth-120);
-
-let y=Math.random()*(window.innerHeight-60);
-
-no.style.left=x+"px";
-
-no.style.top=y+"px";
-
-}
-
-document.getElementById("yes").onclick=function(){
-
-document.getElementById("question").style.display="none";
-
-document.getElementById("result").style.display="block";
-
-}
-
-</script>
-
-</body>
-</html>
